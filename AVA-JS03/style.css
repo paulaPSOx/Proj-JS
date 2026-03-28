@@ -1,0 +1,129 @@
+body {
+    background-image: url('imagens/proj-js03-img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+input {
+    width: 20%; 
+    padding: 14px;
+    margin: 8px 0;
+    border: 1px solid #4B5364;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #e68d8d; 
+}
+
+/* Estilo para o #resultado-container quando há resultado */
+#resultado-container.com-resultado {
+    display: block; 
+    margin-top: 20px; 
+    padding: 15px; 
+    background-color: #fff;
+    border-radius: 5px; 
+    font-weight: bold;
+}
+
+#resultado-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Estilo para a borda os resultados */
+#resultado-container.conceito-suficiente {
+    border: 2px solid #4CAF50;
+    border: 1px solid #4CAF50; 
+    box-shadow: -4px 0px 30px 1px #4CAF50;
+    
+}
+
+#resultado-container.conceito-insuficiente {
+    border: 2px solid #FF0000;
+    border: 1px solid #FF0000; 
+    box-shadow: -4px 0px 30px 1px #FF0000;
+}
+
+#resultado-container.conceito-regular {
+    border: 2px solid #FFAD00;
+    border: 1px solid #FFAD00; 
+    box-shadow: -4px 0px 30px 1px #FFAD00;
+}
+
+#resultado-container.conceito-erro {
+    color: #4B5364;
+    border: 2px solid #4B5364;
+    border: 1px solid #4B5364; 
+    box-shadow: -4px 0px 30px 1px #4B5364;
+}
+
+#mensagem-erro {
+   color: #00000000; 
+}
+
+button {
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #e68d8d;
+    color: #000;
+    border-top: 1px solid #fff;
+    box-shadow: -4px 0px 30px 1px #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #4B5364;
+}
+
+footer {
+    background-color: #e68d8d;
+    color: #fff;
+    border-top: 1px solid #BBB7B7;
+    box-shadow: -4px 0px 30px 1px #BBB7B7;
+    text-align: center;
+    position: fixed;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer a:hover {
+    color: #6d6d6d;
+    transform: scale(1.1);
+}
+
+footer h6 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+}

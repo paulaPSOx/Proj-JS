@@ -1,0 +1,127 @@
+body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    margin: 0;
+    
+}
+
+.container {
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+
+.input-container label, .input-container input, .input-container button {
+    margin-top: 30px;
+}
+
+input {
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+button {
+    background-color: #9CB327;
+    color: #fff;
+    border: 1px solid #FBC11C;
+    border-radius: 6px;
+    box-shadow: -1px 0px 20px 1px #FBC11C;padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 40px;
+    
+}
+
+button:hover {
+    background-color: #1c2001;
+}
+
+.img-container {
+    text-align: center;
+    max-height: 100%;
+}
+
+.img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#resultado {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#resultado.abaixo-do-peso {
+    color: #58B7DD;
+}
+
+#resultado.peso-normal {
+    color: #9CB327;
+}
+
+#resultado.sobrepeso {
+    color: #F48221;
+}
+
+#resultado.obesidade-grau-i {
+    color: #E64638;
+}
+
+#resultado.obesidade-grau-ii,
+#resultado.obesidade-grau-iii {
+    color: #BD3C8C;
+}
+
+#resultado.error-message {
+    color: red;
+}
+
+footer {
+    background-color: #1c2001;
+    color: #fff;
+    border-top: 1px solid #FBC11C;
+    box-shadow: -4px 0px 30px 1px #FBC11C;
+    text-align: center;
+    position: fixed;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer a:hover {
+    color: #FBC11C;
+    transform: scale(1.1);
+}
+
+footer h6 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+}
