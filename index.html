@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paula Oliveira | Desenvolvedora Front-End</title>
+
+<meta name="description" content="Portfólio de Paula Oliveira - Desenvolvedora Front-End especializada em JavaScript e UX.">
+<meta name="author" content="Paula Oliveira">
+
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0d0f20;
+    color:#f0f0f0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#0d0f20;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#007acc,#00d4ff);
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#00d4ff;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    padding:110px 20px 50px;
+    text-align:center;
+    border-radius:0 0 60px 60px;
+    position:relative;
+}
+
+header h1{
+    font-size:3rem;
+    color:#00d4ff;
+}
+
+header p{
+    margin-top:10px;
+    color:#cceeff;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:15px;
+    padding:6px 15px;
+    border-radius:20px;
+    background:#00d4ff;
+    color:#000;
+    font-weight:600;
+}
+
+.toggle-theme{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#fff;
+    color:#007acc;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.toggle-theme:hover{
+    transform:scale(1.05);
+}
+
+/* SOBRE */
+.about{
+    max-width:900px;
+    margin:40px auto;
+    text-align:center;
+    line-height:1.6;
+}
+
+/* FILTROS */
+#filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
+
+#filters button{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    background:#1b1e3a;
+    color:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#filters button:hover{
+    background:#00d4ff;
+    color:#000;
+}
+
+#filters .active{
+    background:#00d4ff;
+    color:#000;
+}
+
+/* GRID */
+main{
+    max-width:1300px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:20px;
+    text-align:center;
+}
+
+.card-body h3{
+    color:#00d4ff;
+    margin-bottom:10px;
+}
+
+.card-body a{
+    display:inline-block;
+    margin:5px;
+    padding:10px 20px;
+    border-radius:10px;
+    background:#007acc;
+    color:#fff;
+    transition:0.3s;
+}
+
+.card-body a:hover{
+    background:#00d4ff;
+    color:#000;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    margin-top:50px;
+}
+
+footer a{
+    margin:0 10px;
+    color:#00d4ff;
+    font-weight:600;
+    position:relative;
+    transition:0.3s;
+}
+
+footer a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:2px;
+    background:#00d4ff;
+    transition:0.3s;
+}
+
+footer a:hover{
+    color:#ffffff;
+}
+
+footer a:hover::after{
+    width:100%;
+}
+
+/* 🔥 ESPAÇAMENTO ADICIONADO AQUI */
+footer p{
+    margin-top:20px;
+    font-size:0.9rem;
+    color:#aaa;
+}
+
+/* LIGHT MODE */
+body.light{
+    background:#f5f5f5;
+    color:#000;
+}
+
+body.light .card{
+    background:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Paula Oliveira</h1>
+<p>Desenvolvedora Front-End | JavaScript | UI & UX</p>
+<div class="badge">🚀 Open to Work</div>
+<button class="toggle-theme">⚪⚫</button>
+</header>
+
+<section class="about">
+<h2>Sobre mim</h2>
+<p>
+Desenvolvedora Front-End focada em criar interfaces modernas, interativas e
+centradas na experiência do usuário. Este portfólio demonstra minha evolução
+técnica e capacidade de transformar exercícios em aplicações estruturadas.
+</p>
+</section>
+
+<div id="filters">
+<button class="active" data-filter="all">Todos</button>
+<button data-filter="jogos">Jogos</button>
+<button data-filter="calculadoras">Calculadoras</button>
+<button data-filter="exercicios">Exercícios</button>
+</div>
+
+<main id="portfolio"></main>
+
+<footer>
+<a href="https://github.com/paulaPSOx" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/oliveiraspaula" target="_blank">LinkedIn</a>
+<p>© 2026 Paula Oliveira</p>
+</footer>
+
+<script>
+const projetos=[
+{id:'AVA-JS01',nome:'Contador de Dias',tipo:'exercicios',img:'proj-js01-img.png'},
+{id:'AVA-JS02',nome:'Calculadora IMC',tipo:'calculadoras',img:'proj-js02-img.png'},
+{id:'AVA-JS03',nome:'Média de Notas',tipo:'calculadoras',img:'proj-js03-img.png'},
+{id:'AVA-JS04',nome:'Ordenar Nomes',tipo:'exercicios',img:'proj-js04-img.png'},
+{id:'AVA-JS05',nome:'Mensagem Dinâmica',tipo:'exercicios',img:'proj-js05-img.png'},
+{id:'AVA-JS06',nome:'Acerte o Número',tipo:'jogos',img:'proj-js06-img.png'},
+{id:'AVA-JS07',nome:'Menu Navegação',tipo:'exercicios',img:'proj-js07-img.png'},
+{id:'AVA-JS08',nome:'Relógio',tipo:'exercicios',img:'proj-js08-img.png'},
+{id:'AVA-JS09',nome:'Coração Animado',tipo:'exercicios',img:'proj-js09-img.png'},
+{id:'AVA-JS10',nome:'Galeria',tipo:'exercicios',img:'proj-js10-img(4).png'}
+];
+
+const main=document.getElementById('portfolio');
+
+function render(f='all'){
+main.innerHTML='';
+projetos.forEach((p,i)=>{
+if(f==='all'||p.tipo===f){
+
+const card=document.createElement('div');
+card.className='card';
+
+card.onclick=(e)=>{
+if(e.target.tagName!=='A'){
+window.open(`./${p.id}/`,'_blank');
+}
+};
+
+const img=document.createElement('img');
+img.src=`${p.id}/imagens/${p.img}`;
+img.onerror=()=>img.src='https://via.placeholder.com/400x200';
+
+const body=document.createElement('div');
+body.className='card-body';
+
+body.innerHTML=`
+<h3>${p.nome}</h3>
+<a href="./${p.id}/" target="_blank">Projeto</a>
+<a href="https://github.com/paulaPSOx/${p.id}" target="_blank">Código</a>
+`;
+
+card.appendChild(img);
+card.appendChild(body);
+main.appendChild(card);
+
+setTimeout(()=>card.classList.add('show'),i*100);
+}});
+}
+render();
+
+document.querySelectorAll('#filters button').forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+render(btn.dataset.filter);
+};
+});
+
+const toggle=document.querySelector('.toggle-theme');
+
+if(localStorage.getItem('theme')==='light'){
+document.body.classList.add('light');
+}
+
+toggle.onclick=()=>{
+document.body.classList.toggle('light');
+localStorage.setItem('theme',
+document.body.classList.contains('light')?'light':'dark');
+};
+</script>
+
+</body>
+</html>
